@@ -31,7 +31,7 @@ class _RegistrationStep4ScreenState extends State<RegistrationStep4Screen> {
           ),
         ),
         DropdownButtonFormField<String>(
-          initialValue: _country,
+          value: _country,
           decoration: const InputDecoration(labelText: 'COUNTRY'),
           items: const [
             DropdownMenuItem(value: 'India', child: Text('India')),
@@ -42,7 +42,7 @@ class _RegistrationStep4ScreenState extends State<RegistrationStep4Screen> {
         ),
         const SizedBox(height: 16),
         DropdownButtonFormField<String>(
-          initialValue: _state,
+          value: _state,
           decoration: const InputDecoration(labelText: 'STATE / REGION'),
           items: const [
             DropdownMenuItem(value: 'Tamil Nadu', child: Text('Tamil Nadu')),
@@ -52,7 +52,7 @@ class _RegistrationStep4ScreenState extends State<RegistrationStep4Screen> {
         ),
         const SizedBox(height: 16),
         DropdownButtonFormField<String>(
-          initialValue: null,
+          value: null,
           decoration: const InputDecoration(labelText: 'VILLAGE / TOWN OF ORIGIN'),
           items: const [
             DropdownMenuItem(value: 'add', child: Text('Add your ancestral village')),

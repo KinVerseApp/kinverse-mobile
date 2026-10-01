@@ -15,6 +15,12 @@ class _RegistrationStep3ScreenState extends State<RegistrationStep3Screen> {
   String _gender = 'Prefer not to say';
 
   @override
+  void dispose() {
+    _dob.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return RegistrationScaffold(
       step: 3,
@@ -25,7 +31,7 @@ class _RegistrationStep3ScreenState extends State<RegistrationStep3Screen> {
         TextField(controller: _dob, decoration: const InputDecoration(labelText: 'DATE OF BIRTH', hintText: 'MM / DD / YYYY')),
         const SizedBox(height: 16),
         DropdownButtonFormField<String>(
-          initialValue: _gender,
+          value: _gender,
           decoration: const InputDecoration(labelText: 'GENDER'),
           items: const [
             DropdownMenuItem(value: 'Prefer not to say', child: Text('Prefer not to say')),

@@ -59,15 +59,20 @@ class AppBottomNav extends StatelessWidget {
   }
 
   Widget _fab(BuildContext context) {
-    return InkWell(
-      onTap: () => context.push('/add-relative'),
-      customBorder: const CircleBorder(),
-      child: Container(
-        width: 44,
-        height: 44,
-        margin: const EdgeInsets.only(top: -18),
-        decoration: const BoxDecoration(color: AppColors.clay, shape: BoxShape.circle),
-        child: const Icon(Icons.add, color: Colors.white),
+    // Transform.translate instead of a negative margin - visually the same
+    // (floats the button above the bar) but doesn't rely on a Container
+    // reporting a negative-margin-adjusted size to its parent Row.
+    return Transform.translate(
+      offset: const Offset(0, -18),
+      child: InkWell(
+        onTap: () => context.push('/add-relative'),
+        customBorder: const CircleBorder(),
+        child: Container(
+          width: 44,
+          height: 44,
+          decoration: const BoxDecoration(color: AppColors.clay, shape: BoxShape.circle),
+          child: const Icon(Icons.add, color: Colors.white),
+        ),
       ),
     );
   }
