@@ -19,6 +19,14 @@ class _AddRelativeScreenState extends ConsumerState<AddRelativeScreen> {
   final _email = TextEditingController();
 
   @override
+  void dispose() {
+    _name.dispose();
+    _phone.dispose();
+    _email.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final selected = ref.watch(selectedRelativeTypeProvider);
 

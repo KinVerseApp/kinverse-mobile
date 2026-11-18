@@ -19,6 +19,14 @@ class _RegistrationStep1ScreenState extends ConsumerState<RegistrationStep1Scree
   final _mobile = TextEditingController();
 
   @override
+  void dispose() {
+    _name.dispose();
+    _email.dispose();
+    _mobile.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return RegistrationScaffold(
       step: 1,
